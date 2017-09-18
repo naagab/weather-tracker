@@ -15,8 +15,8 @@ class LoadWeatherEntry implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $weatherEntry;
-    
 
+    public $tries = 2;
     /**
      * Create a new job instance.
      *

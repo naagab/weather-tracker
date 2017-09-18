@@ -33,7 +33,7 @@ class TrackWeather extends Command
      */
     public function handle()
     {
-        $zips = ZipCode::allZips();
+        //$zips = ZipCode::allZips();
         $zips = $this->getZips();
         foreach ($zips as $zipCode=>$waitMins) {
             if ($this->checkEntryRequired($zipCode, $waitMins)) {
@@ -70,6 +70,8 @@ class TrackWeather extends Command
     }
 
     /**
+     * queue the entry
+     *
      * @param $zipCode
      */
     protected function queueEntry($zipCode) {
