@@ -9,15 +9,15 @@
     - In your console navigate to the project directory and run php artisan key:generate 
 - To install the schema run php artisan:migrate 
 
-#Usage
+# Usage
 - Navigate to the project directory in your console
 - Execute the cron job by running php artisan schedule:run
 - Process the job by running  php artisan queue:work
 
 # Notes
 - Though I considered writing this using Symfony ultimately Laravel was chosen instead because of its built in cron and queue functionality
-- Unit test was added for WeatherApi
-- Additional integration tests should be added to test the Models(i.e. query scopes)
+- Unit test for WeatherApi
+- Additional integration tests should be added to test the Models(i.e. query scopes, etc)
 - Built using Laravel's cron and queue functionality
 - Though it has it's downsides, the decision was made to use shell to prevent overlapping and make scheduling much easier
 - Currently there is no way to delete old requests that have backed up in the queue
@@ -30,3 +30,9 @@
 # Features
 - Ability to fetch weather info for specified zipcodes
 - Save fetched data to database
+
+# ToDo
+- Add integration tests
+- Add way to delete outdated queued requests
+- Implement mechanism to prevent job from running if data hasn't changed 
+- Remove old/useless entries in the queue 
